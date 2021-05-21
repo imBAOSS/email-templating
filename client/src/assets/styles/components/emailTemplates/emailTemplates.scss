@@ -1,0 +1,80 @@
+.email-template-container {
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .email-template-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__action-buttons-group {
+      .action-buttons {
+        box-shadow: 1px 5px 5px 1px lightgrey;
+
+        &:first-child {
+          margin-right: 20px;
+        }
+
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+
+    &__alert {
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 5px;
+      min-width: 400px;
+
+      // TODO: Move all colors to variables file
+      &--success {
+        background: #d7f6ef;
+        border: 1px solid #b0c9c4;
+        border-top: 4px solid #25ba86;
+        color: #165340;
+      }
+
+      &--error {
+        background: #FFE7DA;
+        border: 1px solid #d0bdb4;
+        border-top: 4px solid #fd7b26;
+        color: #85360F;
+      }
+
+      &--success, &--error {
+        &.visible {
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 0.1s linear;
+        }
+  
+        &.invisible {
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0s 2s, opacity 2s linear;
+        }
+      }
+    }
+  }
+
+  .email-template-body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+
+    &__left-panel {
+      margin-right: 20px;
+    }
+
+    &__left-panel,
+    &__right-panel {
+      height: 100%;
+      flex: 1;
+    }
+  }
+}

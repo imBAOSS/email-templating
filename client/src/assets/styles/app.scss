@@ -1,0 +1,46 @@
+.app-container {
+  display: flex;
+  height: 100%;
+  padding: 20px;
+  padding-top: 75px;
+  box-sizing: border-box;
+
+  &__left-panel {
+    margin-right: 20px;
+  }
+
+  &__left-panel,
+  &__right-panel {
+    height: 100%;
+    flex: 1;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px 5px 0 0;
+    box-sizing: border-box;
+    box-shadow: 1px 5px 5px 1px lightgrey;
+  }
+
+  &__body {
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 5px 5px 1px lightgrey;
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
