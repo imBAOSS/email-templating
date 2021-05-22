@@ -1,5 +1,7 @@
 # Email Templating - Frontend Project
 
+This project was my first exposure to React hooks, so I was pretty excited for it!
+
 To get this project up and running, you'll need to refer to both the READMEs in the `/client` and `/server` directories and have a server running for each.
 
 ## Assignment Details and Requirements
