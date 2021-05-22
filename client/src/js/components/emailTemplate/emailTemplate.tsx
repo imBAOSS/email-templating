@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import EmailTemplatePreview from '../emailTemplatePreview/emailTemplatePreview';
 import EmailTemplateEditor from '../emailTemplateEditor/emailTemplateEditor';
@@ -29,7 +30,9 @@ const ALERT_TIMEOUT = 3000;
 export default function EmailTemplate(props: IEmailTemplateProps) {
   const [template, setTemplate] = useState('');
   const [context, setContext] = useState('{}');
-  const [previewContent, setPreviewContent] = useState<IRenderTemplate>({body: 'Add context variables to preview template'});
+  const [previewContent, setPreviewContent] = useState<IRenderTemplate>({
+    body: 'Add context variables to preview template'
+  });
   const [alertMessage, setAlertMessage] = useState('');
   const [alertStatus, setAlertStatus] = useState('');
   const [showAlert, setShowAlert] = useState('invisible');
@@ -38,7 +41,7 @@ export default function EmailTemplate(props: IEmailTemplateProps) {
   useEffect(() => {
     fetchTemplate(props.templateId)
       .then((data: { content: string }) => setTemplate(data.content))
-  }, [props, template])
+  }, [props.templateId])
 
   function renderSaveAlertMessage() {
     setShowAlert(VISIBILITY.VISIBLE)
@@ -56,7 +59,6 @@ export default function EmailTemplate(props: IEmailTemplateProps) {
           setAlertMessage(`${ALERT_MESSAGE.SAVE_ERROR}: ${data.error}`)
           setAlertStatus(STATUS.ERROR);
         } else {
-          console.log('Save successful!');
           setAlertMessage(`${ALERT_MESSAGE.SAVE_SUCCESS}`);
           setAlertStatus(STATUS.SUCCESS);
         }
@@ -75,15 +77,12 @@ export default function EmailTemplate(props: IEmailTemplateProps) {
   return(
     <div className="email-template-container">
       <header className="email-template-header">
-        <div className="email-template-header__action-buttons-group">
-          <button className="action-buttons" onClick={handleSave} disabled={!didUpdate}>{ BUTTON_TEXT.SAVE }</button>
-          <button className="action-buttons" onClick={handlePreview}>{ BUTTON_TEXT.PREVIEW }</button>
-        </div>
+        <Link className="email-template-header__link" to="/">Back to Templates</Link>
         <div className={`email-template-header__alert email-template-header__alert--${alertStatus} ${showAlert}`}>{alertMessage}</div>
       </header>
       <div className="email-template-body">
         <section className="email-template-body__left-panel">
-          <EmailTemplatePreview content={previewContent} />
+          <EmailTemplatePreview content={previewContent} templateId={props.templateId} />
         </section>
         <section className="email-template-body__right-panel">
           <EmailTemplateEditor
@@ -99,6 +98,12 @@ export default function EmailTemplate(props: IEmailTemplateProps) {
             updateDidUpdateState={setDidUpdate}
           />
         </section>
+      </div>
+      <div className="email-template-footer">
+        <div className="email-template-footer__action-buttons-group">
+          <button className="action-buttons" onClick={handleSave} disabled={!didUpdate}>{ BUTTON_TEXT.SAVE }</button>
+          <button className="action-buttons" onClick={handlePreview}>{ BUTTON_TEXT.PREVIEW }</button>
+        </div>
       </div>
     </div>
   );

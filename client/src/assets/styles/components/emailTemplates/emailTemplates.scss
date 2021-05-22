@@ -1,4 +1,8 @@
+@import '../../variables/colors';
+
 .email-template-container {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -11,7 +15,7 @@
 
     &__action-buttons-group {
       .action-buttons {
-        box-shadow: 1px 5px 5px 1px lightgrey;
+        box-shadow: 1px 5px 5px 1px $box-shadow-grey;
 
         &:first-child {
           margin-right: 20px;
@@ -32,17 +36,17 @@
 
       // TODO: Move all colors to variables file
       &--success {
-        background: #d7f6ef;
-        border: 1px solid #b0c9c4;
-        border-top: 4px solid #25ba86;
-        color: #165340;
+        background: $background-green;
+        border: 1px solid $border-green;
+        border-top: 4px solid $light-green;
+        color: $green;
       }
 
       &--error {
-        background: #FFE7DA;
-        border: 1px solid #d0bdb4;
-        border-top: 4px solid #fd7b26;
-        color: #85360F;
+        background: $background-orange;
+        border: 1px solid $border-orange;
+        border-top: 4px solid $orange;
+        color: $burgandy-red;
       }
 
       &--success, &--error {
@@ -66,15 +70,46 @@
     width: 100%;
     display: flex;
     box-sizing: border-box;
+    margin-bottom: 20px;
 
     &__left-panel {
       margin-right: 20px;
+    }
+
+    &__right-panel {
+      display: flex;
+      flex-direction: column;
     }
 
     &__left-panel,
     &__right-panel {
       height: 100%;
       flex: 1;
+    }
+  }
+
+  .email-template-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__action-buttons-group {
+      .action-buttons {
+        box-shadow: 1px 5px 5px 1px $box-shadow-grey;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:first-child {
+          margin-right: 20px;
+        }
+
+        padding: 10px 20px;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+      }
     }
   }
 }

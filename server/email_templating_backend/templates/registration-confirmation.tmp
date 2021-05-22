@@ -13,7 +13,7 @@
     </style>
     </head>
     <body>
-        <h1>Welcome to Carta! {{ user.name }}</h1>
+        <h1>Welcome to {{ company.name }}! {{ user.name }}</h1>
         <p>
             Please visit <a href="{{ confirmation.url }}">this link</a> to confirm your account.
         </p>

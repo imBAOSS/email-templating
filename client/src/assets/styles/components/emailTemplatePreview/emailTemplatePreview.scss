@@ -1,34 +1,32 @@
+@import '../../variables/colors';
+
 .email-template-preview {
   display: flex;
   flex-direction: column;
   flex: 1;
   width: 100%;
 
-  &:first-child {
-    margin-bottom: 20px;
-  }
-
   &__header {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: white;
-    border: 1px solid #bbb;
+    background-color: $white;
+    border: 1px solid $border-grey;
     border-radius: 5px 5px 0 0;
     box-sizing: border-box;
-    box-shadow: 1px 5px 5px 1px lightgrey;
+    box-shadow: 1px 5px 5px 1px $box-shadow-grey;
   }
 
   &__body {
     flex: 1;
     width: 100%;
     padding: 20px;
-    background-color: white;
-    border: 1px solid #bbb;
+    background-color: $white;
+    border: 1px solid $border-grey;
     border-top: none;
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
-    box-shadow: 1px 5px 5px 1px lightgrey;
+    box-shadow: 1px 5px 5px 1px $box-shadow-grey;
   }
 
   &__textarea {

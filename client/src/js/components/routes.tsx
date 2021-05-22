@@ -18,7 +18,6 @@ export const Routes = () => {
 
     return () => {
       mounted = false;
-      console.log("Routes unmounting...")
     };
   }, []);
 
@@ -26,6 +25,7 @@ export const Routes = () => {
     <Switch>
       <Route exact path="/" component={App} />
       {
+        // After fetching templates, create a route per template
         templates.map((templateId: String, idx: number) =>
           <Route key={idx} path={`/${templateId}`}>
             <EmailTemplate templateId={`${templateId}`} />

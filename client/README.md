@@ -1,4 +1,4 @@
-# Email Templating Front-end Mock
+# Email Templating - Frontend
 
 
 ## Setup
@@ -15,3 +15,5 @@
   - Run `npm install -g yarn`
 - Run run `yarn` to install boilerplate dependencies
 
+## Running the Frontend Server
+- After completing setup, make sure you're in the `/client` directory in your terminal, and run `npm run start`. This will kick off the server, and you'll be able to access the app at http://localhost:3000

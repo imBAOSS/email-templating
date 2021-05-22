@@ -1,8 +1,10 @@
+@import './variables/colors';
+
 .app-container {
   display: flex;
   height: 100%;
   padding: 20px;
-  padding-top: 75px;
+  padding-top: 59px;
   box-sizing: border-box;
 
   &__left-panel {
@@ -19,11 +21,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: white;
-    border: 1px solid #bbb;
+    background-color: $white;
+    border: 1px solid $border-grey;
     border-radius: 5px 5px 0 0;
     box-sizing: border-box;
-    box-shadow: 1px 5px 5px 1px lightgrey;
+    box-shadow: 1px 5px 5px 1px $box-shadow-grey;
   }
 
   &__body {
@@ -31,12 +33,12 @@
     width: 100%;
     margin: 0;
     padding: 20px;
-    background-color: white;
-    border: 1px solid #bbb;
+    background-color: $white;
+    border: 1px solid $border-grey;
     border-top: none;
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
-    box-shadow: 1px 5px 5px 1px lightgrey;
+    box-shadow: 1px 5px 5px 1px $box-shadow-grey;
     list-style: none;
 
     li {

@@ -28,6 +28,7 @@ describe('<EmailTemplate />', () => {
 
     expect(wrapper.find('.action-buttons').length).toBe(2);
     expect(wrapper.find('EmailTemplatePreview').length).toBe(1);
+    expect(wrapper.find('EmailTemplatePreview').props().templateId).toEqual(TEMPLATE_ID.REGISTRATION_CONFIRMATION);
     expect(wrapper.find('EmailTemplateEditor').length).toBe(2);
   });
 });

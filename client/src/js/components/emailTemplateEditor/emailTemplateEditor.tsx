@@ -41,6 +41,7 @@ export default function EmailTemplateEditor(props: IEmailTemplateEditorProps) {
     props.updateDidUpdateState(true);
   }
 
+  // Renders the list of context variables with respective input fields to populate variables
   function renderContextTemplate() {
     return (
       <div className='email-template-editor__context-variable-container'>

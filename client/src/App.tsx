@@ -9,7 +9,6 @@ export default function App() {
   
   useEffect(() => {
     let mounted = true;
-    console.log("App mounting...");
 
     fetchTemplates()
       .then((data: string[]) => {
@@ -20,7 +19,6 @@ export default function App() {
 
     return () => {
       mounted = false;
-      console.log("App unmounting...");
     };
   }, []);
 
@@ -40,7 +38,9 @@ export default function App() {
           }
         </ul>
       </section>
-      <section className="app-container__right-panel"></section>
+      <section className="app-container__right-panel">
+        {/* Placeholder section to maintain space for template editor */}
+      </section>
     </div>
   );
 }
